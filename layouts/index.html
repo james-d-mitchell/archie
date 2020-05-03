@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-	{{ partial "header.html" . }}
-	<body>
-		<div class="content">
-			{{ partial "head.html" . }}
-			
-			<main class="list">
-				<div class="site-description">
-					{{- if isset .Site.Params "subtitle" -}}
-					<p>{{ .Site.Params.Subtitle | markdownify }}</p>
-					{{- end -}}
-				</div>
-				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
-				<section class="list-item">
-					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-					<br><div class="description">
-						{{ if isset .Params "description" }}
-						{{ .Description }}
-						{{ else }}
-						{{ .Summary }}&hellip;
-						{{ end }}
-					</div>
-					<a href="{{ .RelPermalink }}">Read more ⟶</a>
-				</section>
-				{{ end }}
-				{{ template "partials/paginator.html" . }}
-			</main>
-			{{ partial "footer.html" . }}
-		</div>
-		
-	</body>
+  {{ partial "header.html" . }}
+  <body>
+    <div class="content">
+      {{ partial "head.html" . }}
+
+      <main>
+        <article>
+          <div class="title">
+            <section class="body">
+              <p>This is the webpage of James D. Mitchell.  I am a professor of mathematics
+              at the <a href="http://www.st-andrews.ac.uk/maths">School of Mathematics and
+                Statistics</a> at the
+              <a href="http://www.st-andrews.ac.uk/">University of St Andrews</a>. I&rsquo;m currently
+              interested in computational semigroup theory, and topological algebra.</p>
+              <p>The website accompanying the paper <a href="articles/paper_submitted_ja.pdf">‘Groups that together with any
+                transformation generate regular semigroups or idempotent generated
+                semigroups’</a> by J. Araújo, J.
+              D. Mitchell and Csaba Schneider is available <a href="companion.html">here</a>.</p>
+              <h1 id="address">Address</h1>
+              <p>Mathematical Institute,<br>
+              North Haugh,<br>
+              St Andrews,<br>
+              Fife,<br>
+              KY16 9SS,<br>
+              Scotland.</p>
+              <p><em>email:</em> jdm3 at st-and dot ac dot uk<br>
+              <em>telep:</em> +44 (0) 1334 463722</p>
+
+            </section>
+        </article>
+        <div class="meta"> Last updated May 2, 2020</div>
+          </div>
+      </main>			{{ partial "footer.html" . }}
+    </div>
+
+  </body>
 </html>
