@@ -27,7 +27,7 @@
 			{{ end }}
 		</div>
 	</article>
-			<div class="meta"> Last updated {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} 
+			<div class="meta"> Last modified: {{ dateFormat "Jan 2, 2006" .Lastmod }}{{ if .Draft }} 
                           <span class="draft-label">DRAFT</span> {{ end }}</div>
 		</div>
 </main>

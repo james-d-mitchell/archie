@@ -9,28 +9,11 @@
         <article>
           <div class="title">
             <section class="body">
-              <p>This is the webpage of James D. Mitchell.  I am a professor of mathematics
-              at the <a href="http://www.st-andrews.ac.uk/maths">School of Mathematics and
-                Statistics</a> at the
-              <a href="http://www.st-andrews.ac.uk/">University of St Andrews</a>. I&rsquo;m currently
-              interested in computational semigroup theory, and topological algebra.</p>
-              <p>The website accompanying the paper <a href="articles/paper_submitted_ja.pdf">‘Groups that together with any
-                transformation generate regular semigroups or idempotent generated
-                semigroups’</a> by J. Araújo, J.
-              D. Mitchell and Csaba Schneider is available <a href="companion.html">here</a>.</p>
-              <h1 id="address">Address</h1>
-              <p>Mathematical Institute,<br>
-              North Haugh,<br>
-              St Andrews,<br>
-              Fife,<br>
-              KY16 9SS,<br>
-              Scotland.</p>
-              <p><em>email:</em> jdm3 at st-and dot ac dot uk<br>
-              <em>telep:</em> +44 (0) 1334 463722</p>
-
+              <h1>{{.Title}}</h1>
+              {{.Content}}
             </section>
         </article>
-        <div class="meta"> Last updated May 2, 2020</div>
+        <div class="meta"> Last modified: {{ dateFormat "Jan 2, 2006" .Lastmod }} </div>
           </div>
       </main>			{{ partial "footer.html" . }}
     </div>
