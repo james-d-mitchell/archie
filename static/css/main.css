@@ -1,17 +1,17 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@300;400&display=swap");
 /* Markdown */
 :root{
---maincolor: red;
+--maincolor: #009edc;
 --bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
---hovercolor:navy;
+--hovercolor: #dcac00;
 --darkMaincolor: #50fa7b;
 }
 html {
   color: #232333;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 15px;
+  font-family: 'Old Standard TT', serif;
+  font-size: 16px;
   line-height: 1.6em;
 }
 body{
@@ -28,7 +28,7 @@ body{
 }
 
 p {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Old Standard TT', serif;
   line-height: 1.5;
 }
 
@@ -225,4 +225,19 @@ svg{
     border-radius: 4px;
     margin-left: 6px;
     background-color: #f9f2f4;
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter 59;
+}
+
+ol li:before {
+  content: counter(my-awesome-counter) ". ";
+}
+
+ol li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  counter-increment: my-awesome-counter -1;
 }
